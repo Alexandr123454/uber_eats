@@ -587,13 +587,13 @@ body {
   .footer--button--up {
     width: 80px;
     height: 80px;
-    left: 300px;
+    left: 230px;
     top: 125px;
   }
   .footer--button--up_arrow--up {
     width: 15px;
     height: 24px;
-    left: 329px;
+    left: 258px;
     top: 128px;
   }
 }
