@@ -12,7 +12,7 @@ body {
 
 .grid--container--header--and---search--box {
   display: grid;
-  grid-template-columns: 1124px;
+  grid-template-columns: 1fr;
   justify-content: center;
 }
 
@@ -76,7 +76,7 @@ body {
   width: 292px;
   height: 40px;
 
-  padding-left: 30px;
+  padding: 0 30px 0 30px;
 
   border: 1px solid #e0e0e0;
   border-radius: 2px;
@@ -119,6 +119,7 @@ body {
   line-height: 24px;
   text-align: center;
   color: #1d1d1d;
+  transition: 0.3s;
 }
 
 .buttons_register--button {
@@ -138,6 +139,7 @@ body {
   line-height: 24px;
   text-align: center;
   color: #fff;
+  transition: 0.3s;
 }
 
 .header--site_image--customer--cart {
@@ -147,18 +149,18 @@ body {
 }
 
 .search--box--restaurant {
-  position: relative;
   display: grid;
   grid-template-columns: 1124px;
   justify-content: center;
 }
 
 .search--box--restaurant--input {
+  position: relative;
   margin: 26px 0 0;
   height: 40px;
   outline: none;
   line-height: 24px;
-  padding-left: 36px;
+  padding: 0 36px 0 36px;
   border: 0 solid white;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -168,15 +170,18 @@ body {
 }
 
 .search--box--restaurant--input_magnifier {
-  position: absolute;
   height: 27px;
   width: 25px;
-  top: 32px;
+  margin-top: -30px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .sign--kyiv--restoraunts {
-  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 170px;
+  justify-content: center;
+  margin: 56px 0 0 -950px;
   font-weight: normal;
   font-size: 22px;
   line-height: 34px;
@@ -198,6 +203,7 @@ body {
   background-size: cover;
   background-position: center;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .dish--name {
@@ -206,6 +212,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .type--of--dish {
@@ -249,7 +256,7 @@ body {
   position: relative;
 }
 
-.group--one_laguages {
+.group--one_laguages { 
   width: 227px;
   height: 40px;
 
@@ -306,6 +313,7 @@ body {
   margin-right: 15px;
   height: 25px;
   width: 25px;
+  cursor: pointer;
 }
 
 .group--one_web--links {
@@ -329,6 +337,7 @@ body {
   font-size: 13px;
   line-height: 15px;
   text-align: center;
+  transition: 0.3s;
 }
 
 .footer_markets {
@@ -364,31 +373,59 @@ body {
   line-height: 15px;
 }
 
-.footer--button--up {
-  position: absolute;
-  background-color: #59bd5a;
+.footer--button--up_arrow--up {
   width: 80px;
   height: 80px;
-  left: 1080px;
-  top: 110px;
+  position: fixed;
+  background-color: #59BD5A;
   border-radius: 2px;
+  right: 16px;
+  bottom: 24px;
+  cursor: pointer;
+  opacity: 0.4;
 }
-
-.footer--button--up_arrow--up {
+.footer--button--up_arrow--up::after {
+  content: "";
+  display: block;
   position: absolute;
-  font-size: 50px;
-  color: #eaf7ea;
-  display: inline-block;
-  width: 15px;
-  height: 24px;
-  left: 1108px;
-  top: 110px;
+  background: url(./images/arrowup.png) center no-repeat;
+  width: 16px;
+  height: 25px;
+  bottom: 28px;
+  right: 32px;
+}
+.footer--button--up_arrow--up:hover {
+  transform: scale(1.06);
+  transition: transform 0.2s;
+  opacity: 1;
 }
 
-@media (  max-width: 1124px) {
+.buttons_sign--in--button:hover {
+  background-color: #57AD56;
+}
+
+.buttons_register--button:hover {
+  background-color: #57AD56;
+}
+
+.cards--list_card_image:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 10px gray;
+}
+
+.nav--links_link:hover {
+  color: #57AD56;
+}
+
+.footer_rights a:hover {
+  color: #57AD56;
+}
+
+
+@media (  max-width: 1140px) {
 
   .grid--container--header--and---search--box {
-    grid-template-columns: 768px;
+    grid-template-columns: 1fr;
   }
 
   .header--site_logo {
@@ -409,6 +446,10 @@ body {
 
   .search--box--restaurant {
     grid-template-columns: 768px;
+  }
+
+  .sign--kyiv--restoraunts {
+    margin: 56px 0 0 -596px;
   }
 
   .cards--list {
@@ -435,21 +476,13 @@ body {
     grid-column-gap: 180px;
   }
 
-  .footer--button--up {
-    width: 80px;
-    height: 80px;
-    left: 700px;
-    top: 125px;
-  }
   .footer--button--up_arrow--up {
-    width: 15px;
-    height: 24px;
-    left: 729px;
-    top: 128px;
+    right: 16px;
+    bottom: 25px;
   }
 }
 
-@media (  max-width: 639px) {
+@media (  max-width: 784px) {
 
   .header--site {
     display: flex;
@@ -470,7 +503,7 @@ body {
   }
 
   .grid--container--header--and---search--box {
-    grid-template-columns: 320px;
+    grid-template-columns: 1fr;
   }
 
   .header--site_conatiner--adress--delivery {
@@ -530,11 +563,12 @@ body {
   }
 
   .search--box--restaurant {
-    grid-template-columns: 320px;
+    grid-template-columns: 1fr;
+    margin: 0 10px;
   }
 
   .sign--kyiv--restoraunts {
-    margin-top: 125px;
+    margin: 125px 0 0 -150px;
   }
 
   .header--site_image--customer--cart {
@@ -584,16 +618,13 @@ body {
     grid-row-gap: 20px;
   }
 
-  .footer--button--up {
-    width: 80px;
-    height: 80px;
-    left: 230px;
-    top: 125px;
-  }
   .footer--button--up_arrow--up {
-    width: 15px;
-    height: 24px;
-    left: 258px;
-    top: 128px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .footer--button--up_arrow--up::after {
+    bottom: 20px;
+    right: 24px;
   }
 }
